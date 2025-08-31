@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1756657228
+icon.svg::CompressedTexture2D/CompressedTexture2D::4910889759450779331::1756409145::1756409208::1::::<><><>0<>0<>6c07ec1fdadc4e8c04116a31b1b4f17a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://Assets/::1756656216
+tilemap_ver_2.png::CompressedTexture2D/CompressedTexture2D::4020185272064139385::1756420015::1756420027::1::::<><><>0<>0<>f8630e78119212a508feaf72e9ffa2af<>res://.godot/imported/tilemap_ver_2.png-092a2e367f7c34246f9d5868247114c9.ctex::
+::res://Assets/Temp Assets/::1756656223
+The_Player.png::CompressedTexture2D::4877746508022198892::1756657541::1756657542::1::::<><><>0<>0<>f888e214e8e75250fd2ebe7be325af7b<>res://.godot/imported/The_Player.png-bc9eab134eabb943df6bc1a54fa98bb0.ctex::
+The_Projectile.png::CompressedTexture2D::9122354704507882977::1751846060::1756656223::1::::<><><>0<>0<>7d0a6a0e1593a19e2b251562af4967db<>res://.godot/imported/The_Projectile.png-fdbe1ca5900e36b15168819b3d11ae7a.ctex::
+::res://Scenes/::1756657228
+player.tscn::PackedScene::3716700166286511855::1756657228::0::1::::<><><>0<>0<><>::uid://d1qytjrsknwk4::::res://Scripts/player.gd<>uid://cbq21i3baawoy::::res://Assets/Temp Assets/The_Player.png
+::res://Scripts/::1756657228
+player.gd::GDScript::9018693667447253841::1756657228::0::1::::<>CharacterBody2D<><>0<>0<><>::
