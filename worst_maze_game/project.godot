@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Worst_Maze_Game"
-run/main_scene="uid://bs7nrkc2t8l2v"
+run/main_scene="uid://d1bx65dpitiwi"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [input]
 
