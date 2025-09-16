@@ -1,0 +1,133 @@
+[gd_scene load_steps=2 format=3 uid="uid://i4wembc5sg53"]
+
+[ext_resource type="Script" uid="uid://cbex1bpj3pqo2" path="res://scripts/action_select.gd" id="1_h0tgg"]
+
+[node name="Action Select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h0tgg")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer"]
+layout_mode = 2
+dragging_enabled = false
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 12.4
+
+[node name="DamageContainer" type="MarginContainer" parent="MarginContainer/VSplitContainer/MarginContainer"]
+custom_minimum_size = Vector2(900, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer/DamageContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PlayerHP" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer"]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 18
+text = "Player
+"
+autowrap_mode = 2
+
+[node name="EnemyHP" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer"]
+custom_minimum_size = Vector2(70, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 18
+text = "Enemy
+"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="Message" type="Label" parent="MarginContainer/VSplitContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+horizontal_alignment = 1
+
+[node name="ActionBarBackground" type="ColorRect" parent="MarginContainer/VSplitContainer"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_vertical = 10
+color = Color(0.0980392, 0.258824, 0.403922, 1)
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VSplitContainer/ActionBarBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="BottomHBox" type="HBoxContainer" parent="MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2"]
+layout_mode = 2
+
+[node name="TextMargin" type="MarginContainer" parent="MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2/BottomHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2/BottomHBox/TextMargin"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+text = "Text"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2/BottomHBox/TextMargin"]
+visible = false
+layout_mode = 2
+text = "Text"
+
+[node name="ButtonContainer" type="HBoxContainer" parent="MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2/BottomHBox"]
+layout_mode = 2
+
+[node name="AttackButton" type="Button" parent="MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2/BottomHBox/ButtonContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Attack"
+
+[node name="ItemsButton" type="Button" parent="MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2/BottomHBox/ButtonContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Items"
+
+[node name="EscapeButton" type="Button" parent="MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2/BottomHBox/ButtonContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Run"
+
+[connection signal="pressed" from="MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2/BottomHBox/ButtonContainer/AttackButton" to="." method="_on_attack_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2/BottomHBox/ButtonContainer/ItemsButton" to="." method="_on_items_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2/BottomHBox/ButtonContainer/EscapeButton" to="." method="_on_escape_button_pressed"]
