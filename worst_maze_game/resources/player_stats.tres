@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=2 format=3 uid="uid://nl35owlc6hlr"]
+
+[ext_resource type="Script" uid="uid://njmgwn2b5sss" path="res://scripts/player_stats.gd" id="1_wld0n"]
+
+[resource]
+script = ExtResource("1_wld0n")
+playerName = "Haywiyre"
+playerHealth = 20
+playerAttack = 5
+playerDefense = 5
+playerSpeed = 8
+metadata/_custom_type_script = "uid://njmgwn2b5sss"
