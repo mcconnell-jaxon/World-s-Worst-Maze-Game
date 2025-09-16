@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqfg5w2jei1bd"]
+
+[ext_resource type="PackedScene" uid="uid://i4wembc5sg53" path="res://scenes/action_select.tscn" id="1_28oxk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background (Replace later)" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 1)
+
+[node name="Replace with enemy" type="Label" parent="."]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 288.0
+offset_right = 686.0
+offset_bottom = 311.0
+text = "Enemy sprite goes here"
+
+[node name="Action Select" parent="." instance=ExtResource("1_28oxk")]
+layout_mode = 1
