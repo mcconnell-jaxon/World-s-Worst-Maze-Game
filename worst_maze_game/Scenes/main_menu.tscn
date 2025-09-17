@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj10icanv4jlb"]
+[gd_scene load_steps=6 format=3 uid="uid://cj10icanv4jlb"]
 
 [ext_resource type="Script" uid="uid://clpmg2f41ljv4" path="res://Scripts/main_menu.gd" id="1_28flt"]
-[ext_resource type="FontFile" uid="uid://bs2ie5arby6sk" path="res://Assets/Maze_title.ttf" id="2_48xlc"]
-[ext_resource type="FontFile" uid="uid://dxvo5laf3e1vd" path="res://Assets/Maze_text.otf" id="3_1ehe0"]
+[ext_resource type="FontFile" uid="uid://u1rpsyjj8wxq" path="res://Assets/Maze_title.ttf" id="2_48xlc"]
+[ext_resource type="FontFile" uid="uid://bhf1ely4hsnh0" path="res://Assets/Maze_text.otf" id="3_1ehe0"]
+[ext_resource type="PackedScene" uid="uid://ebmjsddtditr" path="res://Scenes/volume_setting.tscn" id="4_ce3w2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28flt"]
 bg_color = Color(0.664436, 0.536396, 0.786871, 1)
@@ -66,6 +67,14 @@ theme_override_fonts/font = ExtResource("3_1ehe0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
 text = "Start"
 
+[node name="SettingsButton" type="Button" parent="MainButtons"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.984399, 0.991031, 0.986849, 1)
+theme_override_fonts/font = ExtResource("3_1ehe0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
+text = "Settings"
+
 [node name="AboutButton" type="Button" parent="MainButtons"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
@@ -126,9 +135,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -99.5
-offset_top = 110.5
+offset_top = 90.0
 offset_right = 100.5
-offset_bottom = 160.5
+offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.984399, 0.991031, 0.986849, 1)
@@ -136,7 +145,55 @@ theme_override_fonts/font = ExtResource("3_1ehe0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
 text = "Back"
 
+[node name="Settings" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -218.0
+offset_top = -403.0
+offset_right = 219.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BackButton" type="Button" parent="Settings"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -99.5
+offset_top = -74.0
+offset_right = 100.5
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.984399, 0.991031, 0.986849, 1)
+theme_override_fonts/font = ExtResource("3_1ehe0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
+text = "Back"
+
+[node name="Volume_setting" parent="Settings" instance=ExtResource("4_ce3w2")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 0.5
+offset_top = -29.0
+offset_right = 0.5
+offset_bottom = -29.0
+
 [connection signal="pressed" from="MainButtons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MainButtons/AboutButton" to="." method="_on_about_button_pressed"]
 [connection signal="pressed" from="MainButtons/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="About/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Settings/BackButton" to="." method="_on_back_button_pressed"]
