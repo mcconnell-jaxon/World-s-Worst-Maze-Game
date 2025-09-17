@@ -1,0 +1,18 @@
+[
+	{name: "Beer",
+	 description: "Nectar of the gods.\nIncreases Strength Permanently",
+	 quantity: 0}
+	{name: "Hamburger",
+	 description: "delicious hamburbger,,,\nHeals 10 HP.",
+	 quantity: 0}
+	{name: "Hot Dog",
+	 description: "$1.50\nHeals 5 HP",
+	 quantity: 0}
+	{name: "Dubious Carnival Food",
+	 description: "You don’t know why this is here or how long it’s been sitting out, but it’s going in your stomach anyways\n(???),
+	 quantity: 0"}
+	{name: "Whole cheese wheel",
+	 description: "It’s pink???\nHeals HP to full.",
+	 quantity: 0}
+	
+]
