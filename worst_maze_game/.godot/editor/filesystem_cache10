@@ -1,12 +1,24 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1756657228
+::res://::1758040532
 icon.svg::CompressedTexture2D/CompressedTexture2D::4910889759450779331::1756409145::1756409208::1::::<><><>0<>0<>6c07ec1fdadc4e8c04116a31b1b4f17a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://Assets/::1756656216
+::res://Assets/::1758041094
 tilemap_ver_2.png::CompressedTexture2D/CompressedTexture2D::4020185272064139385::1756420015::1756420027::1::::<><><>0<>0<>f8630e78119212a508feaf72e9ffa2af<>res://.godot/imported/tilemap_ver_2.png-092a2e367f7c34246f9d5868247114c9.ctex::
-::res://Assets/Temp Assets/::1756656223
-The_Player.png::CompressedTexture2D::4877746508022198892::1756657541::1756657542::1::::<><><>0<>0<>f888e214e8e75250fd2ebe7be325af7b<>res://.godot/imported/The_Player.png-bc9eab134eabb943df6bc1a54fa98bb0.ctex::
-The_Projectile.png::CompressedTexture2D::9122354704507882977::1751846060::1756656223::1::::<><><>0<>0<>7d0a6a0e1593a19e2b251562af4967db<>res://.godot/imported/The_Projectile.png-fdbe1ca5900e36b15168819b3d11ae7a.ctex::
-::res://Scenes/::1756657228
-player.tscn::PackedScene::3716700166286511855::1756657228::0::1::::<><><>0<>0<><>::uid://d1qytjrsknwk4::::res://Scripts/player.gd<>uid://cbq21i3baawoy::::res://Assets/Temp Assets/The_Player.png
-::res://Scripts/::1756657228
-player.gd::GDScript::9018693667447253841::1756657228::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://Assets/Fonts/::1758041101
+VCR_OSD_MONO_1.001.ttf::FontFile::877536774178578151::1427851310::1758041113::1::::<><><>0<>0<>55919d266ff91cc526c514e493f10031<>res://.godot/imported/VCR_OSD_MONO_1.001.ttf-5d7d36200f90dd5cddd63eb8696a74f9.fontdata::
+::res://Assets/Temp Assets/::1758041101
+Maze_text.otf::FontFile::8612762711677521207::1758040992::1758041113::1::::<><><>0<>0<>b71976a3119c7eddf869f89d6690b792<>res://.godot/imported/Maze_text.otf-c647c1823e5e75126bc922d72d11b9f1.fontdata::
+Maze_title.ttf::FontFile::351303956334268322::1758040996::1758041113::1::::<><><>0<>0<>14b3236812bb8511583626db4e1c40ef<>res://.godot/imported/Maze_title.ttf-15611a33a82bb6760dd043a6944f5cac.fontdata::
+The_Player.png::CompressedTexture2D/CompressedTexture2D::4877746508022198892::1756657541::1756657542::1::::<><><>0<>0<>f888e214e8e75250fd2ebe7be325af7b<>res://.godot/imported/The_Player.png-bc9eab134eabb943df6bc1a54fa98bb0.ctex::
+The_Projectile.png::CompressedTexture2D/CompressedTexture2D::9122354704507882977::1751846060::1756656223::1::::<><><>0<>0<>7d0a6a0e1593a19e2b251562af4967db<>res://.godot/imported/The_Projectile.png-fdbe1ca5900e36b15168819b3d11ae7a.ctex::
+::res://Scenes/::1758040948
+enemy.tscn::PackedScene::8959758468113234842::1758040892::0::1::::<><><>0<>0<><>::uid://bfc032q2gxfmj::::res://Scripts/enemy.gd<>uid://d27634wt5mh2p::::res://Assets/Temp Assets/The_Projectile.png
+game.tscn::PackedScene::8987689794894781772::1758040893::0::1::::<><><>0<>0<><>::uid://bxjn4m4t3im2t::::res://Assets/tilemap_ver_2.png<>uid://bs7nrkc2t8l2v::::res://Scenes/player.tscn<>uid://d0wf6bl54xdhy::::res://Scenes/enemy.tscn
+main_menu.tscn::PackedScene::-1::1758040948::0::1::::<><><>0<>0<><>::
+pause_menu.gdshader::Shader::1787503191490711790::1758040799::0::1::::<><><>0<>0<><>::
+pause_menu.tscn::PackedScene::-1::1758040948::0::1::::<><><>0<>0<><>::
+player.tscn::PackedScene::3716700166286511855::1758040892::0::1::::<><><>0<>0<><>::uid://d1qytjrsknwk4::::res://Scripts/player.gd<>uid://cbq21i3baawoy::::res://Assets/Temp Assets/The_Player.png
+::res://Scripts/::1758040942
+enemy.gd::GDScript::2743063028522890413::1757013460::0::1::::<>Node2D<><>0<>0<><>::
+main_menu.gd::GDScript::5576625059599373411::1758040664::0::1::::<>Control<><>0<>0<><>::
+pause_menu.gd::GDScript::5616496563681087384::1758040738::0::1::::<>Control<><>0<>0<><>::
+player.gd::GDScript/GDScript::9018693667447253841::1756660266::0::1::::<>CharacterBody2D<><>0<>0<><>::

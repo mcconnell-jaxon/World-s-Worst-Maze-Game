@@ -1,2 +1,6 @@
 res://Scenes/player.tscn
-res://Scripts/player.gd
+res://Scenes/enemy.tscn
+res://Scenes/game.tscn
+res://Scripts/main_menu.gd
+res://Scripts/pause_menu.gd
+res://Scenes/main_menu.tscn
