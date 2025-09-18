@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cfnt81gh1kwj5"]
+
+[node name="Damage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Damage" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(10, 20)
+layout_mode = 0
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
