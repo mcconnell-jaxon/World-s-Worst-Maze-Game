@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://d1bx65dpitiwi"]
+[gd_scene load_steps=7 format=4 uid="uid://d1bx65dpitiwi"]
 
 [ext_resource type="Texture2D" uid="uid://bxjn4m4t3im2t" path="res://Assets/tilemap_ver_2.png" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://bs7nrkc2t8l2v" path="res://Scenes/player.tscn" id="2_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://d0wf6bl54xdhy" path="res://Scenes/enemy.tscn" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://bjfl3k74rt12j" path="res://Scenes/ui.tscn" id="4_3dryh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dryh"]
 texture = ExtResource("1_wrm1d")
@@ -82,3 +83,7 @@ position_smoothing_enabled = true
 
 [node name="Enemy" parent="CanvasLayer" instance=ExtResource("3_wrm1d")]
 position = Vector2(272, 49)
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="Hud" instance=ExtResource("4_3dryh")]
