@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://beyath1m5t05m"]
+
+[ext_resource type="Texture2D" uid="uid://d27634wt5mh2p" path="res://Assets/Temp Assets/The_Projectile.png" id="1_ouvbh"]
+[ext_resource type="Script" uid="uid://bko6vl54smxcd" path="res://Scripts/Item.gd" id="2_h0qlb"]
+
+[resource]
+script = ExtResource("2_h0qlb")
+id = &"Cheese"
+title = "Cheese"
+icon = ExtResource("1_ouvbh")
+qty = 0
+description = "It’s pink??? (Full heal)"
+metadata/_custom_type_script = "uid://d2234ai2gae8k"
