@@ -20,12 +20,11 @@ func resume() -> void:
 	inventory.hide()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):  # Esc
+	if event.is_action_pressed("Escape"):  # Esc
 		if get_tree().paused:
 			resume()
 		else:
 			paused()
-		get_viewport().set_input_as_handled()
 
 func set_description(item: Item) -> void:
 	description.find_child("Description").text = item.description
