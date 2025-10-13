@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bjwro3d7ty4gt"]
+
+[ext_resource type="Texture2D" uid="uid://dkncxauuia3yf" path="res://Assets/Temp Assets/Hamburger.png" id="1_fov77"]
+[ext_resource type="Script" uid="uid://bko6vl54smxcd" path="res://Scripts/Item.gd" id="2_dfau7"]
+
+[resource]
+script = ExtResource("2_dfau7")
+id = &"Hamburger"
+title = "Hamburger"
+icon = ExtResource("1_fov77")
+qty = 0
+description = "Delicious hamburbger,,,, (+10 HP)
+"
+metadata/_custom_type_script = "uid://d2234ai2gae8k"
