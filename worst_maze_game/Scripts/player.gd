@@ -24,8 +24,10 @@ func sprint_handler():
 	#modify speed for sprinting
 	if Input.is_action_pressed("Sprint"):
 		SPEED = 400
+		sprite.speed_scale = 2
 	else:
 		SPEED = 200
+		sprite.speed_scale = 1
 		
 func _ready():
 	sprite.stop()
