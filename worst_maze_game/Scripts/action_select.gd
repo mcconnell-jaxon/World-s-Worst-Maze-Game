@@ -3,14 +3,16 @@ extends Control
 #global variables lol (im too lazy to not use globals)
 var player_health = 0
 var player_attack = 0
-var player_defense = 0
+var player_defense = 0 # remove in future
 var player_speed = 0
-var player_weapon = 5
+var player_weapon = 5 # remove in futur
 
-var enemy_health = 10
-const enemy_attack = 3
-const enemy_defense = 5
+var enemy_health = 0
+var enemy_attack = 0
+const enemy_defense = 5 # remove later
 const enemy_speed = 5
+
+signal end_fight
 
 @onready var damage_container: MarginContainer = $MarginContainer/VSplitContainer/MarginContainer/DamageContainer
 @onready var player_hp: Label = $MarginContainer/VSplitContainer/MarginContainer/PlayerHP
@@ -20,19 +22,23 @@ const enemy_speed = 5
 @onready var text_margin: MarginContainer = $MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2/BottomHBox/TextMargin
 @onready var button_container: HBoxContainer = $MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2/BottomHBox/ButtonContainer
 
-#@export var stats: PlayerStats :
-	#set(value):
-		#stats = value
+var enemyStats = load("res://resource/enemy_list.tres").get_enemy(enemy.enemy)
+#var enemy = enemy_list.get_enemy(enemy.enemy)
+#add font
 
 func _ready():																			#on ready
-	var stats = load("res://resources/player_stats.tres")								#load player stats
-	
+	var stats = load("res://resource/player_stats.tres")								#load player stats
+	print(enemy.enemy)
 	player_health = stats.get_player_health()											#assign variables to the variables in the player stats resource
 	player_attack = stats.get_player_attack()
 	player_defense = stats.get_player_defense()
 	player_speed = stats.get_player_speed()
 	player_hp.text = "Player " + str(player_health)
 	enemy_hp.text = "Enemy " + str(enemy_health)
+	
+	enemy_health = randi_range(int(enemyStats["min_health"]), int(enemyStats["max_health"]))
+	print(enemy_attack)
+	updateEnemyHealth(enemy_health)
 
 #This updates the text for the health of the player.
 func updatePlayerHealth(health):														#i split these up for something i forgor why
@@ -43,13 +49,13 @@ func updateEnemyHealth(health):
 	enemy_hp.text = "Enemy " + str(health)
 
 #This displays damage numbers that float on screen then fade away.
-func damageNumbers(dmg, playerTakingDmg):														#function for showing damage counters
+func damageNumbers(dmg, isPlayerTakingDmg):														#function for showing damage counters
 																						#param: damage(int), playerTakingDmg(bool)
 	var tween = get_tree().create_tween()								#create a tween for animating
 	var damage = Label.new()
 	damage_container.add_child(damage)
 	
-	if playerTakingDmg:																		#if player is taking damage
+	if isPlayerTakingDmg:																		#if player is taking damage
 		damage.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN						#move damage text to bottom left
 		damage.size_flags_vertical = Control.SIZE_SHRINK_END 
 	else:																				#if enemy is taking damage
@@ -87,6 +93,8 @@ func player_turn():
 	var damage_to_enemy = player_attack + player_weapon - enemy_defense
 	var initial_health = enemy_health													#keep intial health to be used in tween
 	enemy_health -= damage_to_enemy														#decrement enenmy's health
+	if enemy_health < 0:																	#make sure the health doesnt go below 0.
+		enemy_health = 0
 	damageNumbers(damage_to_enemy, false)												#show damage counter
 	
 	createText("Player dealt " + str(damage_to_enemy) + " damage!")
@@ -102,11 +110,15 @@ func player_turn():
 
 #Change this if the player's damage formula is tweaked.
 func enemy_turn():																		#same thing as player turn but for enemy
+	enemy_attack = int(enemyStats["damage"][randi_range(0, 1)]) #choosing random attack
 	var damage_to_player = enemy_attack - player_defense
 	var initial_health = player_health
 	if damage_to_player < 1:
 		damage_to_player = 1
+	
 	player_health -= damage_to_player
+	if player_health < 0:
+		player_health = 0
 	damageNumbers(damage_to_player, true)
 	
 	var tween = get_tree().create_tween()
@@ -124,9 +136,8 @@ func _on_items_button_pressed() -> void:											#TODO: add inventory scene/me
 
 #Have the screen transition back to the maze.
 func end():																			#fades screen out
-	var tween = get_tree().create_tween()
-	tween.tween_property(action_bar_background, "modulate:a", 0, 0.5).from(1)
-	#should probably add removing the instance of the fighting scene too...
+	await get_tree().create_timer(0.75).timeout
+	end_fight.emit()
 
 
 func _on_escape_button_pressed() -> void:

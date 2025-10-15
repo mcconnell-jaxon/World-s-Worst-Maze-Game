@@ -14,14 +14,23 @@ func set_player_name(name):
 func get_player_name() -> String:
 	return "%s" % [playerName]
 
+func set_player_health(health):
+	playerHealth = health
+
 func get_player_health() -> int:
 	return playerHealth
+
+func set_player_attack(attack):
+	playerAttack = attack
 
 func get_player_attack() -> int:
 	return playerAttack
 
 func get_player_defense() -> int:
 	return playerDefense
+
+func set_player_speed(speed):
+	playerSpeed = speed
 
 func get_player_speed() -> int:
 	return playerSpeed
