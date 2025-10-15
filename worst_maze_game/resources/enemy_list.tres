@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bdeoirrvtamek"]
+
+[ext_resource type="Script" uid="uid://dnliy38qrm36b" path="res://scripts/enemy_list.gd" id="1_hy8kw"]
+
+[resource]
+script = ExtResource("1_hy8kw")
+playerN = ""
+playerHealth = 0
+playerAttack = 0
+playerDefense = 0
+playerSpeed = 0
