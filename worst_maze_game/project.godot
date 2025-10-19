@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Main"
-run/main_scene="uid://d1bx65dpitiwi"
+run/main_scene="uid://cj10icanv4jlb"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
 window/stretch/mode="canvas_items"
+
+[editor]
+
+movie_writer/movie_file="/home/hermit/Key_Quest/Videos/video.avi"
 
 [input]
 

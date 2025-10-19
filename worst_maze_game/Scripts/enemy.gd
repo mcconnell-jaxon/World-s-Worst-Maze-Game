@@ -2,18 +2,20 @@ extends Node2D
 
 const SPEED = 300.0
 
+var current_level: int = 1
 var astar_grid: AStarGrid2D
 var walkable_list: Array
 var is_moving
 var target_position: Vector2
 var path = []
-@onready var tile_map_layer: TileMapLayer = $"../../TileMapLayer"
+
+@onready var base_layer: TileMapLayer = $"../Level_1_Map/BaseLayer"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready():
 	#set up astar_grid
 	astar_grid = AStarGrid2D.new()
-	astar_grid.region = Rect2i(0,0, 17,6)
+	astar_grid.region = Rect2i(0,0, 150,150)
 	astar_grid.cell_size = Vector2(32, 32)
 	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 	astar_grid.update()
@@ -24,8 +26,7 @@ func _ready():
 	for x in region_size.x:
 		for y in region_size.y:
 			var tile_position = Vector2(x + region_position.x, y + region_position.y)
-			var tile_data = tile_map_layer.get_cell_tile_data(tile_position)
-			
+			var tile_data = base_layer.get_cell_tile_data(tile_position)
 			#add all walkable tiles to list
 			if tile_data == null or not tile_data.get_custom_data("walkable"):
 				astar_grid.set_point_solid(tile_position)
@@ -42,11 +43,14 @@ func _process(_delta):
 	
 func generate_random_point():
 	walkable_list.shuffle()
-	return walkable_list[0]
+	if len(walkable_list) > 0:
+		return walkable_list[0]
+	print("no walkable tiles in list!")
 	
 func generate_new_path():
 	target_position = generate_random_point()
-	path = astar_grid.get_id_path(tile_map_layer.local_to_map(global_position), target_position)
+	print(target_position)
+	path = astar_grid.get_id_path(base_layer.local_to_map(global_position), target_position)
 	return path
 	
 func move():
@@ -56,12 +60,12 @@ func move():
 	path.pop_front()
 	
 	if path.is_empty():
-		print("path doesn't exist")
+		#print("path doesn't exist")
 		return
 
 	var original_position = Vector2(global_position)
 	
-	global_position = tile_map_layer.map_to_local(path[0])
+	global_position = base_layer.map_to_local(path[0])
 	animated_sprite_2d.global_position = original_position
 	
 	is_moving = true

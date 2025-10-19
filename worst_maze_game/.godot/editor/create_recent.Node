@@ -1,8 +1,8 @@
+CanvasLayer
+Node2D
 TileMapLayer
 Area2D
-Node2D
 Node
-CanvasLayer
 NavigationAgent2D
 CollisionShape2D
 CharacterBody2D
