@@ -10,4 +10,6 @@ title = "Cheese"
 icon = ExtResource("1_ouvbh")
 qty = 0
 description = "It’s pink??? (Full heal)"
-metadata/_custom_type_script = "uid://d2234ai2gae8k"
+effect = 0
+amount = 100
+consumes_on_use = true

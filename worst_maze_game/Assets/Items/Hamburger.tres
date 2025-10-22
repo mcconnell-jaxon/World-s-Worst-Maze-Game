@@ -11,4 +11,6 @@ icon = ExtResource("1_fov77")
 qty = 0
 description = "Delicious hamburbger,,,, (+10 HP)
 "
-metadata/_custom_type_script = "uid://d2234ai2gae8k"
+effect = 1
+amount = 10
+consumes_on_use = true

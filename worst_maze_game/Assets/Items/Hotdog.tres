@@ -8,7 +8,9 @@ script = ExtResource("2_1qgo8")
 id = &"Hotdog"
 title = "Hotdog"
 icon = ExtResource("1_f0v0p")
-qty = 0
+qty = 1
 description = "$1.50 
 (+5 HP)"
-metadata/_custom_type_script = "uid://d2234ai2gae8k"
+effect = 1
+amount = 5
+consumes_on_use = true

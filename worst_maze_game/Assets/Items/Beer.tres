@@ -10,4 +10,6 @@ title = "Beer"
 icon = ExtResource("1_njwy2")
 qty = 0
 description = "Nectar of the gods (+1 strength)"
-metadata/_custom_type_script = "uid://d2234ai2gae8k"
+effect = 2
+amount = 1
+consumes_on_use = true
