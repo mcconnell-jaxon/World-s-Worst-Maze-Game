@@ -6,6 +6,7 @@ extends Control
 @onready var use: Button = $Inventory/Use
 @onready var inventory: NinePatchRect = $Inventory
 @onready var warning: Panel = $Warning
+@onready var beer_qty_label: Label = $Inventory/Description/Qty  # adjust path to your "Qty" label node
 
 var current_item: Item = null 
 
@@ -28,20 +29,30 @@ func resume() -> void:
 	get_tree().paused = false
 	inventory.hide()
 
-# Uses the variable of the item to display desc, icon, qty
 func set_description(item: Item) -> void:
+	# disconnect old item signal to avoid duplicate connections
+	if current_item and current_item.qty_changed.is_connected(_on_item_qty_changed):
+		current_item.qty_changed.disconnect(_on_item_qty_changed)
+
 	current_item = item
+
+	# connect to new item
+	if not current_item.qty_changed.is_connected(_on_item_qty_changed):
+		current_item.qty_changed.connect(_on_item_qty_changed)
+
+	# draw UI
 	description.find_child("Description").text = item.description
 	description.find_child("Icon").texture = item.icon
-	description.find_child("Qty").text = str(item.qty)
-	# Check if qty is above 1; Enable use button
-	if current_item.qty >= 1:
-		use.disabled = false
-		use.text = "Use"
-	# Check if qty is below 1; Disable use button
-	if current_item.qty <= 0:
-		use.disabled = true
-		use.text  = "Empty"
+	_on_item_qty_changed(item.qty)  # set initial qty & button state
+
+func _on_item_qty_changed(new_qty: int) -> void:
+	# Update qty label
+	description.find_child("Qty").text = str(new_qty)
+	# Or: beer_qty_label.text = str(new_qty)
+
+	# Update Use button state
+	use.disabled = new_qty <= 0
+	use.text = "Use" if new_qty >= 1 else "Empty"
 
 # Check for Escape keybind
 func _unhandled_input(event: InputEvent) -> void:
@@ -69,33 +80,19 @@ func _on_back_button_pressed() -> void:
 	settings.hide()
 	inventory.show()
 
-# Uses current item selected and applies the item effect
+# Uses current item selected and applies the item effect  (simplified)
 func _on_use_pressed() -> void:
-	print("\n" + current_item.title)
-	if current_item == null:
+	if current_item == null or current_item.qty <= 0:
 		return
-	
-	# Uses item and apply item effect
-	if current_item.qty == 1:
-		print("Yummy " + current_item.title + "!")
-		current_item.apply_to(stats)
-		current_item.qty-= 1
-		set_description(current_item)
+
+	print("\n" + current_item.title)
+	print("Yummy " + current_item.title + "!")
+	current_item.apply_to(stats)
+	current_item.qty -= 1  # emits qty_changed; UI refreshes via _on_item_qty_changed
+
+	if current_item.qty == 0:
 		print("You have emptied this item!\n")
-		
-	# Uses item and apply item effect
-	if current_item.qty > 0:
-		print("Yummy " + current_item.title + "!")
-		current_item.apply_to(stats)
-		current_item.qty -= 1
-		# Updates Qty change
-		set_description(current_item)
-		
-	# If Qty is Zero, Use button is disabled
-	if current_item.qty <= 0:
-		use.disabled = true
-		use.text = "Empty"
-		
+
 # Change scene to main menu scene
 func _on_yes_pressed() -> void:
 	resume()

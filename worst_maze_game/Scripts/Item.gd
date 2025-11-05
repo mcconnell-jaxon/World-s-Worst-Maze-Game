@@ -2,18 +2,26 @@ extends Resource
 
 class_name Item
 
+signal qty_changed(new_qty: int)
+
 @export var stats: PlayerStats 
 @export var id : StringName
 @export var title : String
 @export var icon : Texture2D
-@export var qty : int
 @export_multiline var description : String
-
-enum EffectType { NONE, HEAL, ATK, DEF, SPD, RDM}
-
 @export var effect: EffectType = EffectType.NONE
 @export var amount: int = 0
 @export var consumes_on_use := true
+
+enum EffectType { NONE, HEAL, ATK, DEF, SPD, RDM }
+var _qty := 0
+@export var qty: int:
+	get: return _qty
+	set(value):
+		value = max(value, 0)
+		if value == _qty: return
+		_qty = value
+		qty_changed.emit(_qty)  # <<— tell listeners the count changed
 
 # Variable types for item effect
 func apply_to(stats: PlayerStats) -> void:
@@ -40,6 +48,5 @@ func apply_to(stats: PlayerStats) -> void:
 				0: stats.add_attack(boost)
 				1: stats.add_defense(boost)
 				2: stats.add_speed(boost)
-
 		_:
 			pass
