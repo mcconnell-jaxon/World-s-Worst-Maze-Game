@@ -15,6 +15,10 @@ run/main_scene="uid://cj10icanv4jlb"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+enemy="*res://Scripts/global_enemy_name.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
