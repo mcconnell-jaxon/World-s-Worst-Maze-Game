@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://d1bx65dpitiwi"]
+[gd_scene load_steps=10 format=4 uid="uid://d1bx65dpitiwi"]
 
 [ext_resource type="Texture2D" uid="uid://cyvo012xwv3xj" path="res://Assets/lvl_1_tilemap.png" id="1_wowpa"]
 [ext_resource type="PackedScene" uid="uid://bs7nrkc2t8l2v" path="res://Scenes/player.tscn" id="2_wrm1d"]
@@ -96,6 +96,10 @@ custom_data_layer_1/name = "exists"
 custom_data_layer_1/type = 1
 sources/0 = SubResource("TileSetAtlasSource_i6g32")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3dryh"]
+radius = 9.0
+height = 20.0
+
 [node name="game" type="Node2D"]
 y_sort_enabled = true
 
@@ -123,6 +127,9 @@ position = Vector2(912, 1103)
 zoom = Vector2(4, 4)
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_3dryh")
 
 [node name="Enemy" parent="." instance=ExtResource("3_wrm1d")]
 z_index = 1

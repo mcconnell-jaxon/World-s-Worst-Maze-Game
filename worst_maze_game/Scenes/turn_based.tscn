@@ -1,13 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqfg5w2jei1bd"]
 
-[ext_resource type="PackedScene" uid="uid://i4wembc5sg53" path="res://scenes/action_select.tscn" id="1_28oxk"]
-[ext_resource type="Script" uid="uid://bwds6ml2i0ecl" path="res://scenes/turn_based.gd" id="1_bebtb"]
+[ext_resource type="PackedScene" uid="uid://i4wembc5sg53" path="res://Scenes/action_select.tscn" id="1_28oxk"]
+[ext_resource type="Script" uid="uid://bwds6ml2i0ecl" path="res://Scripts/turn_based.gd" id="1_bebtb"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bebtb")
@@ -28,5 +34,13 @@ text = "Enemy sprite goes here"
 
 [node name="Action Select" parent="MarginContainer" instance=ExtResource("1_28oxk")]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 11.0
+offset_right = 1160.0
+offset_bottom = 34.0
+text = "test"
 
 [connection signal="end_fight" from="MarginContainer/Action Select" to="." method="_on_action_select_end_fight"]
