@@ -8,11 +8,14 @@ var walkable_list: Array
 var is_moving
 var target_position: Vector2
 var path = []
+var attack
 
 @onready var base_layer: TileMapLayer = $"../Level_1_Map/BaseLayer"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready():
+	#set enemy_name (i assume that each enemy has their own scene?)
+	enemy.enemy_name = "enemy_2"
 	#set up astar_grid
 	astar_grid = AStarGrid2D.new()
 	astar_grid.region = Rect2i(0,0, 150,150)
@@ -78,3 +81,19 @@ func _physics_process(_delta):
 			return
 		
 		is_moving = false
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("Player collided with enemy! Starting fight!")
+	attack = preload("res://scenes/turn_based.tscn").instantiate()
+	attack.end_fight.connect(close_scene)
+	attack.z_index = 10
+	var spawn_pos = $"../Player/Camera2D".get_screen_center_position()
+	$"..".add_child(attack)
+	$"../Player/Camera2D".zoom = Vector2(1, 1)
+	attack.set_global_position(spawn_pos - get_viewport_rect().size/ 2)
+	get_tree().paused = true
+
+func close_scene():
+	print("ended!")
+	attack.queue_free()

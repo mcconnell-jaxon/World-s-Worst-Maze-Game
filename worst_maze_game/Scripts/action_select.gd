@@ -22,13 +22,13 @@ signal end_fight
 @onready var text_margin: MarginContainer = $MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2/BottomHBox/TextMargin
 @onready var button_container: HBoxContainer = $MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2/BottomHBox/ButtonContainer
 
-var enemyStats = load("res://resource/enemy_list.tres").get_enemy(enemy.enemy)
+var enemyStats = load("res://resources/enemy_list.tres").get_enemy(enemy.enemy_name)
 #var enemy = enemy_list.get_enemy(enemy.enemy)
 #add font
 
 func _ready():																			#on ready
-	var stats = load("res://resource/player_stats.tres")								#load player stats
-	print(enemy.enemy)
+	var stats = load("res://resources/player_stats.tres")								#load player stats
+	#print(enemy.enemy_name)
 	player_health = stats.get_player_health()											#assign variables to the variables in the player stats resource
 	player_attack = stats.get_player_attack()
 	player_defense = stats.get_player_defense()
