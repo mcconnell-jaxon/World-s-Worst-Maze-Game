@@ -97,3 +97,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func close_scene():
 	print("ended!")
 	attack.queue_free()
+	get_tree().paused = false
+	$"../Player/Camera2D".zoom = Vector2(4,4)
