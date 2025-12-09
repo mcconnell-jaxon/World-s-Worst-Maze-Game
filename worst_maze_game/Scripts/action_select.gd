@@ -33,8 +33,8 @@ func _ready():																			#on ready
 	player_attack = stats.get_player_attack()
 	player_defense = stats.get_player_defense()
 	player_speed = stats.get_player_speed()
-	player_hp.text = "Player " + str(player_health)
-	enemy_hp.text = "Enemy " + str(enemy_health)
+	player_hp.text = "Player : " + str(player_health) + " HP"
+	enemy_hp.text = "\n" + str(enemy_health) + " HP"
 	
 	enemy_health = randi_range(int(enemyStats["min_health"]), int(enemyStats["max_health"]))
 	print(enemy_attack)
@@ -46,7 +46,7 @@ func updatePlayerHealth(health):														#i split these up for something i 
 
 #This updates the text for the health of the enemy.
 func updateEnemyHealth(health):
-	enemy_hp.text = "Enemy " + str(health)
+	enemy_hp.text = "\n " + str(health) + " HP"
 
 #This displays damage numbers that float on screen then fade away.
 func damageNumbers(dmg, isPlayerTakingDmg):														#function for showing damage counters
@@ -90,7 +90,7 @@ func _on_attack_button_pressed():
 
 #Feel free to change the forumla as needed
 func player_turn():
-	var damage_to_enemy = player_attack + player_weapon - enemy_defense
+	var damage_to_enemy = int(player_attack * ([0.6, 0.8, 1, 1.2, 1.4].pick_random()) + player_weapon - enemy_defense)
 	var initial_health = enemy_health													#keep intial health to be used in tween
 	enemy_health -= damage_to_enemy														#decrement enenmy's health
 	if enemy_health < 0:																	#make sure the health doesnt go below 0.

@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqfg5w2jei1bd"]
+[gd_scene load_steps=5 format=3 uid="uid://dqfg5w2jei1bd"]
 
 [ext_resource type="PackedScene" uid="uid://i4wembc5sg53" path="res://Scenes/action_select.tscn" id="1_28oxk"]
-[ext_resource type="Script" uid="uid://bwds6ml2i0ecl" path="res://Scripts/turn_based.gd" id="1_bebtb"]
+[ext_resource type="Script" uid="uid://ca3x2qat5mbsx" path="res://Scripts/turn_based.gd" id="1_bebtb"]
+[ext_resource type="FontFile" uid="uid://mrc5xild5xpn" path="res://Assets/Fonts/VCR_OSD_MONO_1.001.ttf" id="3_ugt7y"]
+
+[sub_resource type="Theme" id="Theme_02dp5"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -28,6 +31,7 @@ layout_mode = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Replace with enemy" type="Label" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Enemy sprite goes here"
@@ -37,10 +41,14 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
-offset_left = 8.0
-offset_top = 11.0
-offset_right = 1160.0
-offset_bottom = 34.0
-text = "test"
+offset_left = 938.0
+offset_top = 7.0
+offset_right = 1178.0
+offset_bottom = 44.0
+theme = SubResource("Theme_02dp5")
+theme_override_colors/font_color = Color(0.916575, 0.762361, 0.967614, 1)
+theme_override_fonts/font = ExtResource("3_ugt7y")
+theme_override_font_sizes/font_size = 36
+text = "Foul Beast"
 
 [connection signal="end_fight" from="MarginContainer/Action Select" to="." method="_on_action_select_end_fight"]
