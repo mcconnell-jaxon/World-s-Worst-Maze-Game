@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=3 uid="uid://bjfl3k74rt12j"]
 
 [ext_resource type="Script" uid="uid://d6avlce3aptg" path="res://Scripts/ui.gd" id="1_7vnad"]
-[ext_resource type="Texture2D" uid="uid://cpnv64ic0dg31" path="res://Assets/Temp Assets/temp_inv_ui.png" id="2_uifsc"]
+[ext_resource type="Texture2D" uid="uid://5lgdjm1ktjlu" path="res://Assets/Temp Assets/temp_inv_ui.png" id="2_uifsc"]
 [ext_resource type="PackedScene" uid="uid://bw6udjafo0v21" path="res://Scenes/slot.tscn" id="3_cptvh"]
 [ext_resource type="Resource" uid="uid://bbjuon6vmyu0q" path="res://Assets/Items/Hotdog.tres" id="4_ryf15"]
 [ext_resource type="Resource" uid="uid://bjwro3d7ty4gt" path="res://Assets/Items/Hamburger.tres" id="5_mmixe"]
 [ext_resource type="Resource" uid="uid://beyath1m5t05m" path="res://Assets/Items/Cheese.tres" id="6_nt8jn"]
-[ext_resource type="Resource" uid="uid://blqndpjiqs1kj" path="res://Assets/Items/Censor.tres" id="7_g0wmg"]
+[ext_resource type="Resource" uid="uid://blqndpjiqs1kj" path="res://Assets/Items/Carnival.tres" id="7_g0wmg"]
 [ext_resource type="Resource" uid="uid://d24yn3eukxl5w" path="res://Assets/Items/Beer.tres" id="8_4vbiv"]
-[ext_resource type="Texture2D" uid="uid://cia4aoj526b4k" path="res://Assets/Temp Assets/temp_gear.png" id="9_mmixe"]
-[ext_resource type="Texture2D" uid="uid://cf66w2yy7tgsp" path="res://Assets/Temp Assets/temp_back.png" id="10_nt8jn"]
+[ext_resource type="Texture2D" uid="uid://bawm8f468yq8f" path="res://Assets/Temp Assets/temp_gear.png" id="9_mmixe"]
+[ext_resource type="Texture2D" uid="uid://cy535gx5im4co" path="res://Assets/Temp Assets/temp_back.png" id="10_nt8jn"]
 [ext_resource type="PackedScene" uid="uid://ebmjsddtditr" path="res://Scenes/volume_setting.tscn" id="11_g0wmg"]
 
 [sub_resource type="Theme" id="Theme_m6e0p"]
@@ -63,7 +63,6 @@ script = ExtResource("1_7vnad")
 description = NodePath("Inventory/Description")
 
 [node name="Inventory" type="NinePatchRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -76,6 +75,7 @@ offset_right = 202.398
 offset_bottom = 147.253
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("2_uifsc")
 region_rect = Rect2(-0.334099, 0.173913, 32.3455, 31.5904)
 patch_margin_left = 4
@@ -85,10 +85,10 @@ patch_margin_bottom = 3
 
 [node name="Use" type="Button" parent="Inventory"]
 layout_mode = 0
-offset_left = 78.0
-offset_top = 126.0
-offset_right = 136.0
-offset_bottom = 157.0
+offset_left = 70.6126
+offset_top = 119.122
+offset_right = 150.613
+offset_bottom = 150.122
 theme_override_styles/normal = SubResource("StyleBoxFlat_3r70p")
 text = "Use"
 
@@ -129,7 +129,7 @@ _item = ExtResource("8_4vbiv")
 
 [node name="Description" type="NinePatchRect" parent="Inventory"]
 layout_mode = 0
-offset_left = 29.0
+offset_left = 26.0
 offset_top = 159.0
 offset_right = 196.0
 offset_bottom = 269.0
@@ -146,7 +146,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -77.0
+offset_left = -80.0
 offset_top = -50.0
 offset_right = 77.0
 offset_bottom = 50.0
@@ -155,10 +155,10 @@ grow_vertical = 2
 
 [node name="Icon" type="TextureRect" parent="Inventory/Description"]
 layout_mode = 0
-offset_left = 28.4725
-offset_top = -137.664
-offset_right = 128.472
-offset_bottom = -37.6642
+offset_left = 30.0
+offset_top = -144.0
+offset_right = 141.0
+offset_bottom = -44.0
 
 [node name="Qty" type="Label" parent="Inventory/Description"]
 layout_mode = 0
@@ -254,6 +254,7 @@ offset_right = 0.5
 offset_bottom = -29.0
 
 [node name="Warning" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
