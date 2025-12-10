@@ -11,6 +11,6 @@ icon = ExtResource("1_njwy2")
 description = "Nectar of the gods
 (+1 strength)"
 effect = 2
-amount = 4
+amount = 1
 consumes_on_use = true
-qty = 0
+qty = 4
