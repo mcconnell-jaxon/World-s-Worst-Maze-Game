@@ -32,3 +32,8 @@ res://Assets/Items/Hamburger.tres
 res://Assets/Items/Hotdog.tres
 res://Scripts/node_2d.gd
 res://Scenes/end.tscn
+res://Assets/Items/carnival.tscn
+res://Assets/Items/beer.tscn
+res://Assets/Items/cheese.tscn
+res://Assets/Items/hamburger.tscn
+res://Assets/Items/hotdog.tscn

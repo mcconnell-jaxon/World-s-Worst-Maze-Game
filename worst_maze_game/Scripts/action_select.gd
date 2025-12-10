@@ -83,7 +83,7 @@ func damageNumbers(dmg, isPlayerTakingDmg):														#function for showing d
 #When the "Attack" button is pressed, it compares player speed to the enemy.
 #then it chooses turn order based on that.
 func _on_attack_button_pressed():
-	if ui == load("res://scenes/ui.tscn").instantiate():
+	if ui == load("res://Scenes/ui.tscn").instantiate():
 		ui.queue_free()
 
 	button_container.hide()									#hide buttons so user cant click while in between turns
@@ -157,7 +157,7 @@ func enemy_turn():																		#same thing as player turn but for enemy
 func _on_items_button_pressed() -> void:
 	if not inventory_open:
 		# --- OPEN INVENTORY ---
-		ui = load("res://scenes/ui.tscn").instantiate()
+		ui = load("res://Scenes/ui.tscn").instantiate()
 		add_child(ui)
 		ui.esc_enabled = false
 		ui.inventory.show()

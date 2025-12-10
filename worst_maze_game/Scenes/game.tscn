@@ -150,8 +150,9 @@ position = Vector2(1200, 1010)
 position = Vector2(1200, 465)
 
 [node name="Hud" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="UI" parent="Hud" instance=ExtResource("4_3dryh")]
 
-[node name="Node2D" parent="." instance=ExtResource("5_wowpa")]
+[node name="end" parent="." instance=ExtResource("5_wowpa")]
 position = Vector2(1200, 110)
