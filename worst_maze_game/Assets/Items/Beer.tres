@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d24yn3eukxl5w"]
 
-[ext_resource type="Texture2D" uid="uid://d10ofqcij6pl7" path="res://Assets/Temp Assets/Beer.png" id="1_njwy2"]
+[ext_resource type="Texture2D" uid="uid://g5t3dbic0mk2" path="res://Assets/Temp Assets/Beer.png" id="1_njwy2"]
 [ext_resource type="Script" uid="uid://bko6vl54smxcd" path="res://Scripts/Item.gd" id="2_exd0d"]
 
 [resource]
@@ -8,8 +8,9 @@ script = ExtResource("2_exd0d")
 id = &"Beer"
 title = "Beer"
 icon = ExtResource("1_njwy2")
-qty = 0
 description = "Nectar of the gods (+1 strength)"
 effect = 2
 amount = 1
 consumes_on_use = true
+qty = 0
+metadata/_custom_type_script = "uid://d2234ai2gae8k"
