@@ -13,4 +13,4 @@ description = "Nectar of the gods
 effect = 2
 amount = 1
 consumes_on_use = true
-qty = 4
+qty = 0

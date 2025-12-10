@@ -13,4 +13,4 @@ description = "$1.50
 effect = 1
 amount = 5
 consumes_on_use = true
-qty = 4
+qty = 2

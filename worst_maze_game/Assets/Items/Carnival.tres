@@ -13,4 +13,4 @@ description = "You don’t know why this is here or how long it’s been sitting
 effect = 5
 amount = 0
 consumes_on_use = true
-qty = 4
+qty = 1

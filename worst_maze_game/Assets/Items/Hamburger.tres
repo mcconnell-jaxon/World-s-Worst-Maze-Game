@@ -14,4 +14,4 @@ description = "Delicious hamburbger
 effect = 1
 amount = 10
 consumes_on_use = true
-qty = 4
+qty = 1

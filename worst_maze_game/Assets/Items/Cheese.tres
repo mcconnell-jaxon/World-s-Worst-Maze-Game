@@ -13,4 +13,4 @@ description = "It’s pink???
 effect = 1
 amount = 100
 consumes_on_use = true
-qty = 4
+qty = 0

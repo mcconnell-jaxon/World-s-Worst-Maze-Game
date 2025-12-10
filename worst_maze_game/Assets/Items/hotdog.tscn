@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgfft5gc1a7rj"]
 
-[ext_resource type="Script" uid="uid://dvjypty73nnjf" path="res://hotdog.gd" id="1_cqpsy"]
+[ext_resource type="Script" uid="uid://dvjypty73nnjf" path="res://Assets/Items/hotdog.gd" id="1_cqpsy"]
 [ext_resource type="Texture2D" uid="uid://5j000o0kl4nv" path="res://Assets/Temp Assets/Hotdog.png" id="1_gexg7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cqpsy"]
