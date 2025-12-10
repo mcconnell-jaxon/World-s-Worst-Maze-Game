@@ -1,8 +1,2 @@
 # World-s-Worst-Maze-Game
-evil labyrinth game where you try to survive the minotaur
-
-# TO-DO
-- Level design
-- Make Enemy Class
-- make player
-- decide on top down vs 3/4 view
+Labyrinth navigation game where the player picks up items throughout the maze and avoids enemies that will path-find to you. Hitting enemies will start combat, reaching the end of the maze ends the game.
