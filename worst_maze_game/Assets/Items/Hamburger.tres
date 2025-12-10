@@ -8,10 +8,10 @@ script = ExtResource("2_dfau7")
 id = &"Hamburger"
 title = "Hamburger"
 icon = ExtResource("1_fov77")
-description = "Delicious hamburbger,,,, (+10 HP)
+description = "Delicious hamburbger 
+(+10 HP)
 "
 effect = 1
 amount = 10
 consumes_on_use = true
-qty = 0
-metadata/_custom_type_script = "uid://d2234ai2gae8k"
+qty = 4

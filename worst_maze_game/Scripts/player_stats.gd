@@ -2,7 +2,6 @@ extends Resource
 
 class_name PlayerStats
 
-
 @export var playerName: String = ""
 @export var playerHealth: int = 0
 @export var maxHealth: int = 100
