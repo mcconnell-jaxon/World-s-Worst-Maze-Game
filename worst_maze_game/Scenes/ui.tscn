@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=3 uid="uid://bjfl3k74rt12j"]
 
 [ext_resource type="Script" uid="uid://d6avlce3aptg" path="res://Scripts/ui.gd" id="1_7vnad"]
-[ext_resource type="Texture2D" uid="uid://cpnv64ic0dg31" path="res://Assets/Temp Assets/temp_inv_ui.png" id="2_uifsc"]
+[ext_resource type="Texture2D" uid="uid://5lgdjm1ktjlu" path="res://Assets/Temp Assets/temp_inv_ui.png" id="2_uifsc"]
 [ext_resource type="PackedScene" uid="uid://bw6udjafo0v21" path="res://Scenes/slot.tscn" id="3_cptvh"]
 [ext_resource type="Resource" uid="uid://bbjuon6vmyu0q" path="res://Assets/Items/Hotdog.tres" id="4_ryf15"]
 [ext_resource type="Resource" uid="uid://bjwro3d7ty4gt" path="res://Assets/Items/Hamburger.tres" id="5_mmixe"]
 [ext_resource type="Resource" uid="uid://beyath1m5t05m" path="res://Assets/Items/Cheese.tres" id="6_nt8jn"]
 [ext_resource type="Resource" uid="uid://blqndpjiqs1kj" path="res://Assets/Items/Censor.tres" id="7_g0wmg"]
 [ext_resource type="Resource" uid="uid://d24yn3eukxl5w" path="res://Assets/Items/Beer.tres" id="8_4vbiv"]
-[ext_resource type="Texture2D" uid="uid://cia4aoj526b4k" path="res://Assets/Temp Assets/temp_gear.png" id="9_mmixe"]
-[ext_resource type="Texture2D" uid="uid://cf66w2yy7tgsp" path="res://Assets/Temp Assets/temp_back.png" id="10_nt8jn"]
+[ext_resource type="Texture2D" uid="uid://bawm8f468yq8f" path="res://Assets/Temp Assets/temp_gear.png" id="9_mmixe"]
+[ext_resource type="Texture2D" uid="uid://cy535gx5im4co" path="res://Assets/Temp Assets/temp_back.png" id="10_nt8jn"]
 [ext_resource type="PackedScene" uid="uid://ebmjsddtditr" path="res://Scenes/volume_setting.tscn" id="11_g0wmg"]
 
 [sub_resource type="Theme" id="Theme_m6e0p"]
