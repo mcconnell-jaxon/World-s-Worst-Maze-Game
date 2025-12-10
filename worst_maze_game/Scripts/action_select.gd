@@ -138,7 +138,7 @@ func enemy_turn():																		#same thing as player turn but for enemy
 func _on_items_button_pressed() -> void:
 	if not inventory_open:
 		# --- OPEN INVENTORY ---
-		ui = load("res://scenes/ui.tscn").instantiate()
+		ui = load("res://Scenes/ui.tscn").instantiate()
 		add_child(ui)
 		ui.esc_enabled = false
 		ui.inventory.show()
@@ -173,7 +173,7 @@ func end():																			#fades screen out
 
 
 func _on_escape_button_pressed() -> void:
-	if ui == load("res://scenes/ui.tscn").instantiate():
+	if ui == load("res://Scenes/ui.tscn").instantiate():
 		ui.queue_free()
 	var escape_chance = 0.50 + (float(player_speed - enemy_speed) / 100)			#50% chance of escaping + how much faster the player is / 100
 	var tween = get_tree().create_tween()
