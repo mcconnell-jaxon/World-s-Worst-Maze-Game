@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bbjuon6vmyu0q"]
 
-[ext_resource type="Texture2D" uid="uid://chopdo8ae6l4g" path="res://Assets/Temp Assets/Hotdog.png" id="1_f0v0p"]
+[ext_resource type="Texture2D" uid="uid://5j000o0kl4nv" path="res://Assets/Temp Assets/Hotdog.png" id="1_f0v0p"]
 [ext_resource type="Script" uid="uid://bko6vl54smxcd" path="res://Scripts/Item.gd" id="2_1qgo8"]
 
 [resource]
@@ -8,9 +8,9 @@ script = ExtResource("2_1qgo8")
 id = &"Hotdog"
 title = "Hotdog"
 icon = ExtResource("1_f0v0p")
-qty = 1
 description = "$1.50 
 (+5 HP)"
 effect = 1
 amount = 5
 consumes_on_use = true
+qty = 4

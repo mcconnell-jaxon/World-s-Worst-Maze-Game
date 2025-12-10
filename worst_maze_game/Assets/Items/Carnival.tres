@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://blqndpjiqs1kj"]
+
+[ext_resource type="Texture2D" uid="uid://dq0lvurmtfcsb" path="res://Assets/Temp Assets/Censor.png" id="1_buj6x"]
+[ext_resource type="Script" uid="uid://bko6vl54smxcd" path="res://Scripts/Item.gd" id="2_rwug7"]
+
+[resource]
+script = ExtResource("2_rwug7")
+id = &"Carnival"
+title = "C@r#$val F**d"
+icon = ExtResource("1_buj6x")
+description = "You don’t know why this is here or how long it’s been sitting out, but it’s going in your stomach anyways 
+(-5 HP) (+ Random Stat)"
+effect = 5
+amount = 0
+consumes_on_use = true
+qty = 4
