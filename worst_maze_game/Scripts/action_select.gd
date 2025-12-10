@@ -22,6 +22,9 @@ signal end_fight
 @onready var text_margin: MarginContainer = $MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2/BottomHBox/TextMargin
 @onready var button_container: HBoxContainer = $MarginContainer/VSplitContainer/ActionBarBackground/MarginContainer2/BottomHBox/ButtonContainer
 
+var inventory_open := false
+var ui = null   # To store the UI instance
+
 var enemyStats = load("res://resources/enemy_list.tres").get_enemy(enemy.enemy_name)
 #var enemy = enemy_list.get_enemy(enemy.enemy)
 #add font
@@ -71,6 +74,9 @@ func damageNumbers(dmg, isPlayerTakingDmg):														#function for showing d
 #When the "Attack" button is pressed, it compares player speed to the enemy.
 #then it chooses turn order based on that.
 func _on_attack_button_pressed():
+	if ui == load("res://scenes/ui.tscn").instantiate():
+		ui.queue_free()
+
 	button_container.hide()									#hide buttons so user cant click while in between turns
 	if player_speed > enemy_speed:							#If player is faster than enemy
 		player_turn()										#Player goes first
@@ -129,11 +135,37 @@ func enemy_turn():																		#same thing as player turn but for enemy
 		print("Player has died!")													#replace with game over screen later
 		end()
 
-#Have the inventory pop up when selected.
-func _on_items_button_pressed() -> void:											#TODO: add inventory scene/menu
-	var items = load("res://scenes/item_menu.tscn").instance()						#theoretically adds an item_menu scene on top?
-	get_tree().current_scene.add_child(items)
+func _on_items_button_pressed() -> void:
+	if not inventory_open:
+		# --- OPEN INVENTORY ---
+		ui = load("res://scenes/ui.tscn").instantiate()
+		add_child(ui)
+		ui.esc_enabled = false
+		ui.inventory.show()
+		ui.item_message.connect(_on_item_message) # Returns message
+		ui.inventory_closed.connect(_on_inventory_closed) # Closes iventory after each item usage
+		inventory_open = true
+	else:
+		_close_inventory()
 
+func _on_inventory_closed() -> void:
+	_close_inventory()
+
+# Function to disable inventory
+func _close_inventory() -> void:
+	if ui and ui.is_inside_tree():
+		ui.queue_free()
+	ui = null
+	inventory_open = false
+
+# Function to display message
+func _on_item_message(text: String) -> void:
+	createText(text)
+	
+# Function to disable inventory
+func _on_inventory_close():
+	ui.queue_free()
+	
 #Have the screen transition back to the maze.
 func end():																			#fades screen out
 	await get_tree().create_timer(0.75).timeout
@@ -141,6 +173,8 @@ func end():																			#fades screen out
 
 
 func _on_escape_button_pressed() -> void:
+	if ui == load("res://scenes/ui.tscn").instantiate():
+		ui.queue_free()
 	var escape_chance = 0.50 + (float(player_speed - enemy_speed) / 100)			#50% chance of escaping + how much faster the player is / 100
 	var tween = get_tree().create_tween()
 	

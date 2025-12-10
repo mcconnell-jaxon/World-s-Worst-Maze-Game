@@ -10,6 +10,7 @@ var target_position: Vector2
 var path = []
 var attack
 
+@onready var hud: Node = $"../Hud/UI"
 @onready var base_layer: TileMapLayer = $"../Level_1_Map/BaseLayer"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -85,6 +86,8 @@ func _physics_process(_delta):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print("Player collided with enemy! Starting fight!")
+	# Prevents unpausing during turn_based
+	hud.esc_enabled = false
 	attack = preload("res://Scenes/turn_based.tscn").instantiate()
 	attack.end_fight.connect(close_scene)
 	attack.z_index = 10
@@ -100,4 +103,6 @@ func close_scene():
 	attack.queue_free()
 	get_tree().paused = false
 	$"../Player/Camera2D".zoom = Vector2(4,4)
+	# Enables escape key for inventory
+	hud.esc_enabled = true
 	self.queue_free()

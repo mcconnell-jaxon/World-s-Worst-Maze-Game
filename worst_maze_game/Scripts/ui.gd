@@ -1,5 +1,8 @@
 extends Control
 
+signal item_message(text: String)
+signal inventory_closed()
+
 @export var description: NinePatchRect
 @export var stats: PlayerStats 
 @onready var settings: Panel = $Settings
@@ -9,6 +12,8 @@ extends Control
 @onready var beer_qty_label: Label = $Inventory/Description/Qty  # adjust path to your "Qty" label node
 
 var current_item: Item = null 
+# Safety measure to prevent unpausing when in turn_based scene
+var esc_enabled: bool = true
 
 # When game scene runs, UI is hidden
 func _ready() -> void:
@@ -30,16 +35,12 @@ func resume() -> void:
 	inventory.hide()
 
 func set_description(item: Item) -> void:
-	# disconnect old item signal to avoid duplicate connections
 	if current_item and current_item.qty_changed.is_connected(_on_item_qty_changed):
 		current_item.qty_changed.disconnect(_on_item_qty_changed)
-
 	current_item = item
-
 	# connect to new item
 	if not current_item.qty_changed.is_connected(_on_item_qty_changed):
 		current_item.qty_changed.connect(_on_item_qty_changed)
-
 	# draw UI
 	description.find_child("Description").text = item.description
 	description.find_child("Icon").texture = item.icon
@@ -49,7 +50,6 @@ func _on_item_qty_changed(new_qty: int) -> void:
 	# Update qty label
 	description.find_child("Qty").text = str(new_qty)
 	# Or: beer_qty_label.text = str(new_qty)
-
 	# Update Use button state
 	use.disabled = new_qty <= 0
 	use.text = "Use" if new_qty >= 1 else "Empty"
@@ -57,10 +57,15 @@ func _on_item_qty_changed(new_qty: int) -> void:
 # Check for Escape keybind
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Escape"):  # Esc
-		if get_tree().paused:
-			resume()
+		if esc_enabled == false:
+			print("No")
+			return
 		else:
-			paused()
+			if esc_enabled == true:
+				if get_tree().paused:
+					resume()
+				else:
+					paused()
 
 # Display Use button
 func show_use_button() -> void:
@@ -80,19 +85,27 @@ func _on_back_button_pressed() -> void:
 	settings.hide()
 	inventory.show()
 
-# Uses current item selected and applies the item effect  (simplified)
+# Uses current item selected and applies the item effect
 func _on_use_pressed() -> void:
 	if current_item == null or current_item.qty <= 0:
 		return
+		
+	# Apply item and get a description of changes
+	var stat_msg: String = current_item.apply_to(stats)
+	current_item.qty -= 1
+	# Building msg -------------------------------------------------
+	var msg := "Yummy %s!" % current_item.title
 
-	print("\n" + current_item.title)
-	print("Yummy " + current_item.title + "!")
-	current_item.apply_to(stats)
-	current_item.qty -= 1  # emits qty_changed; UI refreshes via _on_item_qty_changed
-
+	if stat_msg != "":
+		msg += "\n" + stat_msg
+	msg += "\nPlayer health changed to: %d" % int(stats.get_player_health())
 	if current_item.qty == 0:
-		print("You have emptied this item!\n")
-
+		msg += "\nYou have emptied this item!"
+	#----------------------------------------------------------------
+	# Signal to send msg to turn_based.gd
+	item_message.emit(msg)
+	inventory_closed.emit()		# Closes the inventory after uses an item
+	
 # Change scene to main menu scene
 func _on_yes_pressed() -> void:
 	resume()

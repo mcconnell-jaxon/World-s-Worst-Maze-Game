@@ -21,32 +21,60 @@ var _qty := 0
 		value = max(value, 0)
 		if value == _qty: return
 		_qty = value
-		qty_changed.emit(_qty)  # <<— tell listeners the count changed
+		qty_changed.emit(_qty)
 
 # Variable types for item effect
-func apply_to(stats: PlayerStats) -> void:
+func apply_to(stats: PlayerStats) -> String:
 	match effect:
 		EffectType.HEAL:
 			stats.add_health(amount)
+			return "Health increased by %d" % amount
+
 		EffectType.ATK:
 			stats.add_attack(amount)
+			return "Attack increased by %d" % amount
+
 		EffectType.DEF:
 			stats.add_defense(amount)
+			return "Defense increased by %d" % amount
+
 		EffectType.SPD:
 			stats.add_speed(amount)
-		# Random Effect Generator
+			return "Speed increased by %d" % amount
+
 		EffectType.RDM:
-			stats.add_health(-5)
+			# Uses up to 5 HP, but never kills the player
+			var current_hp := stats.get_player_health()
+			var damage := 5
+			
+			# Prevent HP from dropping to 0
+			if current_hp - damage < 1:
+				damage = current_hp - 1
+				
+			if damage > 0:
+				stats.add_health(-damage)
+				
 			var rng := RandomNumberGenerator.new()
 			rng.randomize()
-			# Random number generator for buff 1-3+
 			var boost := rng.randi_range(1, 3)
-			# Random number generator for a stat
 			var which := rng.randi_range(0, 2)
+
+			var stat_name := ""
 			match which:
-				# 0=ATK, 1=DEF, 2=SPD
-				0: stats.add_attack(boost)
-				1: stats.add_defense(boost)
-				2: stats.add_speed(boost)
+				0:
+					stats.add_attack(boost)
+					stat_name = "Attack"
+				1:
+					stats.add_defense(boost)
+					stat_name = "Defense"
+				2:
+					stats.add_speed(boost)
+					stat_name = "Speed"
+					
+			# Build message using the damage dealt
+			if damage > 0:
+				return "You lost %d HP but %s increased by %d!" % [damage, stat_name, boost]
+			else:
+				return "%s increased by %d! (You were already at 1 HP.)" % [stat_name, boost]
 		_:
-			pass
+			return ""
