@@ -1,13 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0wf6bl54xdhy"]
+[gd_scene load_steps=8 format=3 uid="uid://d0wf6bl54xdhy"]
 
 [ext_resource type="Script" uid="uid://bfc032q2gxfmj" path="res://Scripts/enemy.gd" id="1_1f0kj"]
-[ext_resource type="Texture2D" uid="uid://d27634wt5mh2p" path="res://Assets/Temp Assets/The_Projectile.png" id="1_hghv2"]
+[ext_resource type="Texture2D" uid="uid://psbynulikhpc" path="res://Assets/enemy_sprite.png" id="2_1f0kj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afpow"]
+atlas = ExtResource("2_1f0kj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_287tu"]
+atlas = ExtResource("2_1f0kj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0830c"]
+atlas = ExtResource("2_1f0kj")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1f0kj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_hghv2")
+"texture": SubResource("AtlasTexture_afpow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_287tu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0830c")
 }],
 "loop": true,
 "name": &"default",
@@ -21,8 +39,8 @@ size = Vector2(16, 16)
 script = ExtResource("1_1f0kj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_1f0kj")
+autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="."]
 

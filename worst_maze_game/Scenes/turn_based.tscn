@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqfg5w2jei1bd"]
+[gd_scene load_steps=6 format=3 uid="uid://dqfg5w2jei1bd"]
 
 [ext_resource type="PackedScene" uid="uid://i4wembc5sg53" path="res://Scenes/action_select.tscn" id="1_28oxk"]
 [ext_resource type="Script" uid="uid://ca3x2qat5mbsx" path="res://Scripts/turn_based.gd" id="1_bebtb"]
+[ext_resource type="Texture2D" uid="uid://dwwxogbeg17a3" path="res://Assets/battle_background.png" id="2_02dp5"]
 [ext_resource type="FontFile" uid="uid://mrc5xild5xpn" path="res://Assets/Fonts/VCR_OSD_MONO_1.001.ttf" id="3_ugt7y"]
 
 [sub_resource type="Theme" id="Theme_02dp5"]
@@ -22,13 +23,16 @@ grow_vertical = 2
 script = ExtResource("1_bebtb")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+texture_filter = 1
+texture_repeat = 1
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="Background (Replace later)" type="ColorRect" parent="MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+texture_filter = 1
 layout_mode = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("2_02dp5")
 
 [node name="Replace with enemy" type="Label" parent="MarginContainer"]
 visible = false
