@@ -30,3 +30,5 @@ res://Assets/Items/Carnival.tres
 res://Assets/Items/Cheese.tres
 res://Assets/Items/Hamburger.tres
 res://Assets/Items/Hotdog.tres
+res://Scripts/node_2d.gd
+res://Scenes/end.tscn

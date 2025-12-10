@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://d1bx65dpitiwi"]
+[gd_scene load_steps=11 format=4 uid="uid://d1bx65dpitiwi"]
 
 [ext_resource type="Texture2D" uid="uid://cyvo012xwv3xj" path="res://Assets/lvl_1_tilemap.png" id="1_wowpa"]
 [ext_resource type="PackedScene" uid="uid://bs7nrkc2t8l2v" path="res://Scenes/player.tscn" id="2_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://d0wf6bl54xdhy" path="res://Scenes/enemy.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://bjfl3k74rt12j" path="res://Scenes/ui.tscn" id="4_3dryh"]
+[ext_resource type="PackedScene" uid="uid://5pwlewjhum31" path="res://Scenes/end.tscn" id="5_wowpa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dryh"]
 texture = ExtResource("1_wowpa")
@@ -151,3 +152,6 @@ position = Vector2(1200, 465)
 [node name="Hud" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="Hud" instance=ExtResource("4_3dryh")]
+
+[node name="Node2D" parent="." instance=ExtResource("5_wowpa")]
+position = Vector2(1200, 110)

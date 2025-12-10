@@ -1,10 +1,12 @@
+Button
+RichTextLabel
+CollisionShape2D
+Area2D
 CanvasLayer
 Node2D
 TileMapLayer
-Area2D
 Node
 NavigationAgent2D
-CollisionShape2D
 CharacterBody2D
 Camera2D
 RayCast2D

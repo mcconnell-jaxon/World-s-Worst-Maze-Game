@@ -1,6 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
 ::res://::1765333951
 icon.svg::CompressedTexture2D/CompressedTexture2D::4910889759450779331::1765332848::1765332848::1::::<><><>0<>0<>6c07ec1fdadc4e8c04116a31b1b4f17a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+node_2d.gd::GDScript::1653806139328595258::1765339509::0::1::::<>Node2D<><>0<>0<><>::
 ::res://Assets/::1765334007
 battle_background.png::CompressedTexture2D::8750254730529351820::1765332848::1765334007::1::::<><><>0<>0<>a9c83516db2e605b0463e3a0f4f0c5a7<>res://.godot/imported/battle_background.png-4cf1b1641e45cacb2dc3b29b89939e25.ctex::
 enemy_sprite.png::CompressedTexture2D::1090095744400567884::1765332848::1765334007::1::::<><><>0<>0<>4a586c2d4e052f50baf4cf4fd8340ba6<>res://.godot/imported/enemy_sprite.png-0a45f1070df81e2db1841c76402c188a.ctex::
@@ -32,7 +33,7 @@ hamburger.tscn::PackedScene::8998093672541379170::1765332848::0::1::::<><><>0<>0
 hotdog.gd::GDScript::8653292198510325779::1765332848::0::1::::<>Area2D<><>0<>0<><>::
 Hotdog.tres::Resource/Item::2476428999751305234::1765334136::0::1::::<><><>0<>0<><>::uid://5j000o0kl4nv::::res://Assets/Temp Assets/Hotdog.png<>uid://bko6vl54smxcd::::res://Scripts/Item.gd
 hotdog.tscn::PackedScene::5204635418127704619::1765332848::0::1::::<><><>0<>0<><>::uid://dvjypty73nnjf::::res://hotdog.gd<>uid://5j000o0kl4nv::::res://Assets/Temp Assets/Hotdog.png
-::res://Assets/Temp Assets/::1765333951
+::res://Assets/Temp Assets/::1765338990
 Beer.png::CompressedTexture2D/CompressedTexture2D::484268179023895239::1765338948::1765338990::1::::<><><>0<>0<>5563635741e5994f0cfe05bad1c8a8fd<>res://.godot/imported/Beer.png-a7b05bab41ad1cf787b17c403606e844.ctex::
 Censor.png::CompressedTexture2D/CompressedTexture2D::8334599459031242501::1765332848::1765332848::1::::<><><>0<>0<>7fee8da1cf91b1801c3564633acb6ad5<>res://.godot/imported/Censor.png-ca521a0758637e16dcaf7156d4671a92.ctex::
 Dungeon Theme.mp3::AudioStreamMP3/AudioStreamMP3::7030329421211051063::1765332848::1765332848::1::::<><><>0<>0<>36a1382dce257b115c55db2b50006cb2<>res://.godot/imported/Dungeon Theme.mp3-495c3643dad39ee1fef528fd4f792dd0.mp3str::
@@ -51,25 +52,25 @@ The_Projectile.png::CompressedTexture2D/CompressedTexture2D::9122354704507882977
 enemy_list.tres::Resource/Resource::2606109970011582802::1765332848::0::1::::<><><>0<>0<><>::uid://dnliy38qrm36b::::res://scripts/enemy_list.gd
 inventory.json::JSON/JSON::-1::1765332848::0::1::::<><><>0<>0<><>::
 player_stats.tres::Resource/PlayerStats::936917542019974811::1765332848::0::1::::<><><>0<>0<><>::uid://njmgwn2b5sss::::res://scripts/player_stats.gd
-::res://Scenes/::1765334220
-action_select.tscn::PackedScene::622721252945156896::1765334220::0::1::::<><><>0<>0<><>::uid://cbex1bpj3pqo2::::res://Scripts/action_select.gd
+::res://Scenes/::1765339091
+action_select.tscn::PackedScene::622721252945156896::1765339091::0::1::::<><><>0<>0<><>::uid://cbex1bpj3pqo2::::res://Scripts/action_select.gd
 damage.tscn::PackedScene/PackedScene::5151836425669707256::1765332848::0::1::::<><><>0<>0<><>::
-enemy.tscn::PackedScene::8959758468113234842::1765334220::0::1::::<><><>0<>0<><>::uid://bfc032q2gxfmj::::res://Scripts/enemy.gd<>uid://psbynulikhpc::::res://Assets/enemy_sprite.png
-game.tscn::PackedScene::8987689794894781772::1765334220::0::1::::<><><>0<>0<><>::uid://cyvo012xwv3xj::::res://Assets/lvl_1_tilemap.png<>uid://bs7nrkc2t8l2v::::res://Scenes/player.tscn<>uid://d0wf6bl54xdhy::::res://Scenes/enemy.tscn<>uid://bjfl3k74rt12j::::res://Scenes/ui.tscn
+enemy.tscn::PackedScene::8959758468113234842::1765339091::0::1::::<><><>0<>0<><>::uid://bfc032q2gxfmj::::res://Scripts/enemy.gd<>uid://psbynulikhpc::::res://Assets/enemy_sprite.png
+game.tscn::PackedScene::8987689794894781772::1765339091::0::1::::<><><>0<>0<><>::uid://cyvo012xwv3xj::::res://Assets/lvl_1_tilemap.png<>uid://bs7nrkc2t8l2v::::res://Scenes/player.tscn<>uid://d0wf6bl54xdhy::::res://Scenes/enemy.tscn<>uid://bjfl3k74rt12j::::res://Scenes/ui.tscn
 level_1.tscn::PackedScene::8642652702940500328::1765332848::0::1::::<><><>0<>0<><>::uid://bs7nrkc2t8l2v::::res://Scenes/player.tscn<>uid://cyvo012xwv3xj::::res://Assets/lvl_1_tilemap.png<>uid://d0wf6bl54xdhy::::res://Scenes/enemy.tscn
 level_1_tilemap.tscn::PackedScene/PackedScene::1302218486525077516::1765332848::0::1::::<><><>0<>0<><>::uid://cyvo012xwv3xj::::res://Assets/lvl_1_tilemap.png
 main_menu.tscn::PackedScene/PackedScene::5459747098571022963::1765332848::0::1::::<><><>0<>0<><>::uid://clpmg2f41ljv4::::res://Scripts/main_menu.gd<>uid://ebmjsddtditr::::res://Scenes/volume_setting.tscn
-pause_menu.gdshader::Shader::-1::1765334220::0::1::::<><><>0<>0<><>::
+pause_menu.gdshader::Shader::-1::1765339091::0::1::::<><><>0<>0<><>::
 pause_menu.tscn::PackedScene/PackedScene::9115729594163135684::1765332848::0::1::::<><><>0<>0<><>::uid://cmaw4308a3hnc::::res://Scripts/pause_menu.gd<>uid://b0a1hn5fog543::::res://Scenes/pause_menu.gdshader<>uid://bhf1ely4hsnh0::::res://Assets/Maze_text.otf<>uid://ebmjsddtditr::::res://Scenes/volume_setting.tscn
-player.tscn::PackedScene::3716700166286511855::1765334220::0::1::::<><><>0<>0<><>::uid://d1qytjrsknwk4::::res://Scripts/player.gd<>uid://c4kc6e1853bpn::::res://Assets/john_s_walk.png<>uid://tdo4i2d0l11v::::res://Assets/john_w_walk.png<>uid://ch8dp3emgbkrh::::res://Assets/john_e_w_walk.png<>uid://gbcupaltwljs::::res://Assets/john_n_walk.png
+player.tscn::PackedScene::3716700166286511855::1765339091::0::1::::<><><>0<>0<><>::uid://d1qytjrsknwk4::::res://Scripts/player.gd<>uid://c4kc6e1853bpn::::res://Assets/john_s_walk.png<>uid://tdo4i2d0l11v::::res://Assets/john_w_walk.png<>uid://ch8dp3emgbkrh::::res://Assets/john_e_w_walk.png<>uid://gbcupaltwljs::::res://Assets/john_n_walk.png
 slot.tscn::PackedScene::3995791124299755468::1765332848::0::1::::<><><>0<>0<><>::uid://bu8os7rn6nyqg::::res://Scripts/slot.gd
-turn_based.tscn::PackedScene::8293024511469896941::1765334220::0::1::::<><><>0<>0<><>::uid://i4wembc5sg53::::res://Scenes/action_select.tscn<>uid://1aytfut5a5a4::::res://Scripts/turn_based.gd<>uid://dwwxogbeg17a3::::res://Assets/battle_background.png<>uid://mrc5xild5xpn::::res://Assets/Fonts/VCR_OSD_MONO_1.001.ttf
+turn_based.tscn::PackedScene::8293024511469896941::1765339091::0::1::::<><><>0<>0<><>::uid://i4wembc5sg53::::res://Scenes/action_select.tscn<>uid://1aytfut5a5a4::::res://Scripts/turn_based.gd<>uid://dwwxogbeg17a3::::res://Assets/battle_background.png<>uid://mrc5xild5xpn::::res://Assets/Fonts/VCR_OSD_MONO_1.001.ttf
 ui.tscn::PackedScene::3029160630363825103::1765332848::0::1::::<><><>0<>0<><>::uid://d6avlce3aptg::::res://Scripts/ui.gd<>uid://5lgdjm1ktjlu::::res://Assets/Temp Assets/temp_inv_ui.png<>uid://bw6udjafo0v21::::res://Scenes/slot.tscn<>res://Assets/Items/Hotdog.tres<>res://Assets/Items/Hamburger.tres<>res://Assets/Items/Cheese.tres<>res://Assets/Items/Censor.tres<>res://Assets/Items/Beer.tres<>uid://bawm8f468yq8f::::res://Assets/Temp Assets/temp_gear.png<>uid://cy535gx5im4co::::res://Assets/Temp Assets/temp_back.png<>uid://ebmjsddtditr::::res://Scenes/volume_setting.tscn
 volume_setting.tscn::PackedScene::283565378581071263::1765332848::0::1::::<><><>0<>0<><>::uid://df6ujt0nocid2::::res://Scenes/volume_slider.tscn
 volume_slider.tscn::PackedScene::7575433428819011825::1765332848::0::1::::<><><>0<>0<><>::uid://ccq2n4ny4usyi::::res://Scripts/volume_slider.gd
-::res://Scripts/::1765334220
-action_select.gd::GDScript::4852730719657990735::1765334220::0::1::::<>Control<><>0<>0<><>::
-enemy.gd::GDScript::2743063028522890413::1765332848::0::1::::<>Node2D<><>0<>0<><>::
+::res://Scripts/::1765339091
+action_select.gd::GDScript::4852730719657990735::1765339091::0::1::::<>Control<><>0<>0<><>::
+enemy.gd::GDScript::2743063028522890413::1765338991::0::1::::<>Node2D<><>0<>0<><>::
 enemy_list.gd::GDScript::8094955291046770239::1765332848::0::1::::enemyList<>Resource<><>0<>0<><>::
 enemy_test.gd::GDScript/GDScript::3481563537489022629::1765332848::0::1::::<>Node<><>0<>0<><>::
 global_enemy_name.gd::GDScript::6358967639723297845::1765332848::0::1::::<>Node<><>0<>0<><>::
